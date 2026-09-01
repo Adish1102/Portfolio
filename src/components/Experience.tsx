@@ -65,6 +65,23 @@ export default function Experience() {
                         </span>
                       ))}
                     </div>
+
+                    {"certificate" in exp && exp.certificate && (
+                      <div className={`mt-4 ${i % 2 === 0 ? "md:text-right" : ""}`}>
+                        <a
+                          href={exp.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-xs font-medium text-accent transition-all hover:border-accent hover:bg-accent/20 hover:shadow-lg hover:shadow-accent-glow/10"
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="8" r="7" />
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                          </svg>
+                          View Certificate
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
 

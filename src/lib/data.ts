@@ -45,6 +45,7 @@ export const projects = [
     title: "Vector Database with RAG Pipeline",
     description:
       "Built from scratch a vector database supporting 3 ANN search algorithms — HNSW, KD-Tree, and Brute Force — across Cosine, Euclidean, and Manhattan distance metrics, indexing 10,000+ vectors with 5ms average query latency. Developed a RAG pipeline integrating nomic-embed-text (768 dims) and Llama3.2 for document ingestion, chunking, and context-aware generation.",
+    image: "/projects/vectordb-rag.png",
     tags: ["Python", "HNSW", "RAG", "Vector DB", "LLM", "Embeddings"],
     github: "https://github.com/Adish1102/VectorDB-with-RAG-Containerised",
     live: "",
@@ -81,6 +82,7 @@ export const experiences = [
     description:
       "Built an AI-powered OData service orchestration platform enabling natural-language querying across 200+ enterprise SAP OData entities. Designed an LLM-based reasoning layer with query-plan caching and vector memory/RAG, reducing repeated-query latency by 90%. Developed a full CRUD REST API and Pytest-based automated test suite.",
     technologies: ["Python", "FastAPI", "Neo4j", "ChromaDB", "Docker", "LLM"],
+    certificate: "https://lnkd.in/p/dvPKmwMv",
   },
   {
     role: "IT Intern - Project Neosisgen",
@@ -89,6 +91,7 @@ export const experiences = [
     description:
       "Resolved functional and build-level issues during the Neosisgen software rollout by debugging across lab systems and environments. Executed software lifecycle upgrades across 10-15 R&D lab systems, deploying updated releases and legacy versions per SO compliance standards.",
     technologies: ["SDLC", "Git", "Docker", "AWS", "Debugging"],
+    certificate: "https://lnkd.in/p/dqP7W6MR",
   },
 ];
 

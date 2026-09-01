@@ -47,36 +47,46 @@ function ProjectCard({
       }}
     >
       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent/20 via-purple-500/10 to-pink-500/20">
-        {/* Floating background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-6 left-8 h-16 w-16 rounded-2xl bg-accent/10 blur-sm animate-float" />
-          <div className="absolute bottom-8 right-12 h-20 w-20 rounded-full bg-purple-500/10 blur-sm" style={{ animation: "float 8s ease-in-out infinite 1s" }} />
-          <div className="absolute top-1/2 left-1/3 h-12 w-12 rounded-lg bg-pink-500/10 blur-sm rotate-45" style={{ animation: "float 6s ease-in-out infinite 2s" }} />
-        </div>
-        {/* Center icon + number */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/20 text-accent backdrop-blur-sm">
-            {index === 0 && (
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            )}
-            {index === 1 && (
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-              </svg>
-            )}
-            {index === 2 && (
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
-            )}
-          </div>
-          <span className="text-sm font-medium text-muted">{project.tags[0]}</span>
-        </div>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <>
+            {/* Floating background elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-6 left-8 h-16 w-16 rounded-2xl bg-accent/10 blur-sm animate-float" />
+              <div className="absolute bottom-8 right-12 h-20 w-20 rounded-full bg-purple-500/10 blur-sm" style={{ animation: "float 8s ease-in-out infinite 1s" }} />
+              <div className="absolute top-1/2 left-1/3 h-12 w-12 rounded-lg bg-pink-500/10 blur-sm rotate-45" style={{ animation: "float 6s ease-in-out infinite 2s" }} />
+            </div>
+            {/* Center icon + number */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/20 text-accent backdrop-blur-sm">
+                {index === 0 && (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                )}
+                {index === 1 && (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                  </svg>
+                )}
+                {index === 2 && (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-sm font-medium text-muted">{project.tags[0]}</span>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="p-6">
