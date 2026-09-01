@@ -10,6 +10,7 @@ export const personalInfo = {
 
 From engineering deep packet inspection engines processing 10,000+ packets/sec to building AI-powered enterprise platforms, I thrive on solving complex technical challenges. I'm actively looking for full-time opportunities where I can contribute and grow as a developer.`,
   location: "Bhopal, India",
+  resume: "/Adish_Hussain_Resume.pdf",
   education: {
     degree: "B.Tech in Computer Science & Engineering (AI & ML)",
     university: "VIT Bhopal University, Bhopal",

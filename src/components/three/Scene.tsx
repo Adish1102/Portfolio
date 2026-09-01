@@ -9,15 +9,15 @@ export default function Scene() {
     <div className="absolute inset-0 z-0">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1]}
+        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
         style={{ background: "transparent" }}
+        frameloop="demand"
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#a855f7" />
         <FloatingGeometry />
-        <Particles count={300} />
+        <Particles count={100} />
       </Canvas>
     </div>
   );

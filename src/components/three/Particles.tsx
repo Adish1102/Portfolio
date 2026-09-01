@@ -4,7 +4,7 @@ import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-export default function Particles({ count = 200 }: { count?: number }) {
+export default function Particles({ count = 100 }: { count?: number }) {
   const mesh = useRef<THREE.Points>(null);
 
   const { positions, colors } = useMemo(() => {
@@ -14,7 +14,6 @@ export default function Particles({ count = 200 }: { count?: number }) {
       new THREE.Color("#6366f1"),
       new THREE.Color("#a855f7"),
       new THREE.Color("#818cf8"),
-      new THREE.Color("#c084fc"),
     ];
 
     for (let i = 0; i < count; i++) {
@@ -33,8 +32,7 @@ export default function Particles({ count = 200 }: { count?: number }) {
 
   useFrame((state) => {
     if (!mesh.current) return;
-    mesh.current.rotation.y = state.clock.elapsedTime * 0.02;
-    mesh.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.05) * 0.1;
+    mesh.current.rotation.y = state.clock.elapsedTime * 0.01;
   });
 
   return (
@@ -57,7 +55,7 @@ export default function Particles({ count = 200 }: { count?: number }) {
         size={0.03}
         vertexColors
         transparent
-        opacity={0.8}
+        opacity={0.7}
         sizeAttenuation
       />
     </points>

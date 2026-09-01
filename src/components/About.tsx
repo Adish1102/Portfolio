@@ -129,11 +129,11 @@ export default function About() {
                             initial={{ width: 0 }}
                             animate={isInView ? { width: `${skill.level}%` } : {}}
                             transition={{
-                              duration: 1,
-                              delay: 0.5 + i * 0.05,
+                              duration: 0.8,
+                              delay: 0.3 + i * 0.03,
                               ease: "easeOut",
                             }}
-                            className="h-full rounded-full"
+                            className="h-full rounded-full will-change-[width]"
                             style={{
                               background: `linear-gradient(135deg, var(--gradient-start), var(--gradient-end))`,
                             }}

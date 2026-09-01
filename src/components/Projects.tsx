@@ -34,7 +34,7 @@ function ProjectCard({
         setIsHovered(false);
         setMousePosition({ x: 0, y: 0 });
       }}
-      className={`group relative overflow-hidden rounded-2xl border border-card-border bg-card transition-all duration-300 hover:border-accent hover:shadow-xl hover:shadow-accent-glow/10 ${
+      className={`group relative overflow-hidden rounded-2xl border border-card-border bg-card transition-all duration-300 hover:border-accent hover:shadow-xl hover:shadow-accent-glow/10 will-change-transform ${
         project.featured ? "md:col-span-2" : ""
       }`}
       style={{
