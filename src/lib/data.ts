@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "adishhussain100@gmail.com",
   phone: "+91-8595601511",
   github: "https://github.com/Adish1102",
-  linkedin: "https://linkedin.com/in/adishhussain",
+  linkedin: "https://www.linkedin.com/in/adish-",
   bio: `I'm a final year B.Tech student in Computer Science & Engineering (AI & ML) at VIT Bhopal University. I'm passionate about building intelligent systems that bridge the gap between AI research and real-world applications.
 
 From engineering deep packet inspection engines processing 10,000+ packets/sec to building AI-powered enterprise platforms, I thrive on solving complex technical challenges. I'm actively looking for full-time opportunities where I can contribute and grow as a developer.`,
@@ -42,16 +42,6 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Deep Packet Inspection (DPI) Engine",
-    description:
-      "Engineered a high-performance network traffic analyzer parsing PCAP files with deep packet inspection by decoding Ethernet, IP, and TCP/UDP headers at line rate, processing 10,000+ packets/sec. Implemented TLS SNI extraction and five-tuple flow hashing to classify encrypted application traffic from YouTube, Facebook, and Google with 85-92% classification accuracy.",
-    tags: ["Python", "Networking", "TLS SNI", "PCAP", "Multi-threading"],
-    github: "https://github.com/Adish1102/Deep-Packet-Inspection-System",
-    live: "",
-    featured: true,
-    stats: "10,000+ packets/sec | 85-92% accuracy | <0.5ms latency",
-  },
-  {
     title: "Vector Database with RAG Pipeline",
     description:
       "Built from scratch a vector database supporting 3 ANN search algorithms — HNSW, KD-Tree, and Brute Force — across Cosine, Euclidean, and Manhattan distance metrics, indexing 10,000+ vectors with 5ms average query latency. Developed a RAG pipeline integrating nomic-embed-text (768 dims) and Llama3.2 for document ingestion, chunking, and context-aware generation.",
@@ -60,6 +50,16 @@ export const projects = [
     live: "",
     featured: true,
     stats: "3 ANN algorithms | 5ms query latency | 5x speedup with HNSW",
+  },
+  {
+    title: "Deep Packet Inspection (DPI) Engine",
+    description:
+      "Engineered a high-performance network traffic analyzer parsing PCAP files with deep packet inspection by decoding Ethernet, IP, and TCP/UDP headers at line rate, processing 10,000+ packets/sec. Implemented TLS SNI extraction and five-tuple flow hashing to classify encrypted application traffic from YouTube, Facebook, and Google with 85-92% classification accuracy.",
+    tags: ["Python", "Networking", "TLS SNI", "PCAP", "Multi-threading"],
+    github: "https://github.com/Adish1102/Deep-Packet-Inspection-System",
+    live: "",
+    featured: true,
+    stats: "10,000+ packets/sec | 85-92% accuracy | <0.5ms latency",
   },
   {
     title: "AI-Powered Enterprise OData Platform",
