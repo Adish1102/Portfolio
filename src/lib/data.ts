@@ -54,24 +54,25 @@ export const projects = [
     stats: "3 ANN algorithms | 5ms query latency | 5x speedup with HNSW",
   },
   {
+    title: "AI-Powered Enterprise OData Platform",
+    description:
+      "Built an AI-driven OData orchestration platform using FastAPI, Neo4j, ChromaDB, Docker, enabling natural-language querying across 200+ enterprise SAP OData entities. Designed an LLM-based reasoning layer with query-plan caching and vector memory/RAG, reducing repeated-query latency by 90% and achieving 90% query-plan accuracy.",
+    image: "/portfolio_screenshots/02_chat_interface.png",
+    tags: ["Python", "FastAPI", "Neo4j", "ChromaDB", "Docker", "LLM"],
+    github: "https://github.com/Adish1102/AI-Powered-Enterprise-OData-Orchestration-Platform",
+    live: "",
+    featured: true,
+    stats: "200+ entities | 90% accuracy | 90% latency reduction",
+  },
+  {
     title: "Deep Packet Inspection (DPI) Engine",
     description:
       "Engineered a high-performance network traffic analyzer parsing PCAP files with deep packet inspection by decoding Ethernet, IP, and TCP/UDP headers at line rate, processing 10,000+ packets/sec. Implemented TLS SNI extraction and five-tuple flow hashing to classify encrypted application traffic from YouTube, Facebook, and Google with 85-92% classification accuracy.",
     tags: ["Python", "Networking", "TLS SNI", "PCAP", "Multi-threading"],
     github: "https://github.com/Adish1102/Deep-Packet-Inspection-System",
     live: "",
-    featured: true,
-    stats: "10,000+ packets/sec | 85-92% accuracy | <0.5ms latency",
-  },
-  {
-    title: "AI-Powered Enterprise OData Platform",
-    description:
-      "Built an AI-driven OData orchestration platform using FastAPI, Neo4j, ChromaDB, Docker, enabling natural-language querying across 200+ enterprise SAP OData entities. Designed an LLM-based reasoning layer with query-plan caching and vector memory/RAG, reducing repeated-query latency by 90% and achieving 90% query-plan accuracy.",
-    tags: ["Python", "FastAPI", "Neo4j", "ChromaDB", "Docker", "LLM"],
-    github: "https://github.com/Adish1102/AI-Powered-Enterprise-OData-Orchestration-Platform",
-    live: "",
     featured: false,
-    stats: "200+ entities | 90% accuracy | 90% latency reduction",
+    stats: "10,000+ packets/sec | 85-92% accuracy | <0.5ms latency",
   },
 ];
 
