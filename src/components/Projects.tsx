@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { projects } from "@/lib/data";
 
 function ProjectCard({
@@ -13,6 +13,18 @@ function ProjectCard({
 }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    if (!project.images || project.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [project.images]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -20,6 +32,10 @@ function ProjectCard({
       x: ((e.clientX - rect.left) / rect.width - 0.5) * 20,
       y: ((e.clientY - rect.top) / rect.height - 0.5) * 20,
     });
+  };
+
+  const handleDotClick = (dotIndex: number) => {
+    setCurrentImageIndex(dotIndex);
   };
 
   return (
@@ -47,7 +63,47 @@ function ProjectCard({
       }}
     >
       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent/20 via-purple-500/10 to-pink-500/20">
-        {project.image ? (
+        {project.images && project.images.length > 0 ? (
+          <>
+            <div className="relative h-full w-full">
+              {project.images.map((img, imgIndex) => (
+                <img
+                  key={imgIndex}
+                  src={img}
+                  alt={`${project.title} - Screenshot ${imgIndex + 1}`}
+                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+                    imgIndex === currentImageIndex
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95"
+                  } ${isHovered && imgIndex === currentImageIndex ? "scale-105" : ""}`}
+                />
+              ))}
+            </div>
+            {/* Carousel indicators */}
+            {project.images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+                {project.images.map((_, dotIndex) => (
+                  <button
+                    key={dotIndex}
+                    onClick={() => handleDotClick(dotIndex)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      dotIndex === currentImageIndex
+                        ? "w-8 bg-accent"
+                        : "w-2 bg-white/50 hover:bg-white/80"
+                    }`}
+                    aria-label={`Go to screenshot ${dotIndex + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+            {/* Image counter */}
+            {project.images.length > 1 && (
+              <div className="absolute top-4 right-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                {currentImageIndex + 1} / {project.images.length}
+              </div>
+            )}
+          </>
+        ) : project.image ? (
           <img
             src={project.image}
             alt={project.title}
